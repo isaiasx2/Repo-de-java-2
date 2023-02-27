@@ -1,16 +1,24 @@
 package biteBankHeredado;
 
-public class Gerente extends Funcionario {
-	private String clave;
-	
-	
+public class Gerente extends Funcionario implements Autenticable {
 	public void setClave(String clave) {
-		this.clave = clave;
 	}
+
 	public boolean iniciarSesion(String clave) {
-		return clave == "AluraCursos";
+		return this.iniciarSesion(clave);
 	}
+
+	public double getBonificacion() {
+		System.out.println("ejecutando desde gerente");
+		return super.getSalario() + this.getSalario() * 0.05; 
+	}
+
+	@Override
+	public String getClave() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
-		
 	
 }

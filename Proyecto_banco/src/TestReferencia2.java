@@ -7,7 +7,7 @@ public class TestReferencia2 {
 		//diego.telefono = "222222222";
 		
 		
-		Cuenta cuentaDiego = new Cuenta(55);
+		Cuenta cuentaDiego = new Cuenta(55,64984313);
 		cuentaDiego.setAgencia(1);;
 		//cuentaDiego.titular = diego;
 		

@@ -1,10 +1,10 @@
 
 public class TestReferencia {
 	public static void main(String[] args) {
-		Cuenta primeraCuenta = new Cuenta(65);
+		Cuenta primeraCuenta = new Cuenta(65,67861);
 		primeraCuenta.depositar(200);
 		
-		Cuenta segundaCuenta = new Cuenta(787);
+		Cuenta segundaCuenta = new Cuenta(787,6484613);
 		segundaCuenta.depositar(100);
 		
 		System.out.println("primera cuenta: "+ primeraCuenta.getSaldo());

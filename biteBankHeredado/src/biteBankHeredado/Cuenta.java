@@ -1,12 +1,18 @@
+package biteBankHeredado;
 // entidad cuenta://
-class Cuenta {
-	private double saldo;
+public abstract class Cuenta {
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular = new Cliente();
 	
 	//constructor de cuenta
 	private static int total = 0;
+	
+	
+	
+	
+	
 	public Cuenta(int agencia, int numero) {
 		if(agencia <= 0) {
 			System.out.println("No se permite 0");
@@ -22,9 +28,13 @@ class Cuenta {
 	}
 	
 	//NO RETORNA VALOR VOID(VACIO)
-	public void depositar(double valor){
-		this.saldo += valor;
-	}
+	//metodo abstracto
+	
+	
+	public abstract  void depositar(double valor);
+	
+	
+	
 	//RETORNA VALOR BOOLEAN
 	public boolean retirar (double valor) {
 		if(this.saldo >= valor) {
@@ -32,9 +42,19 @@ class Cuenta {
 			return true;
 		}return false;
 	}
+	
+	public boolean saca(double valor) {
+		if(this.saldo >= valor) {
+			this.saldo -= valor;
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	public boolean transferir(double valor, Cuenta cuenta){
 		if(this.saldo >= valor ) {
-			this.saldo -= valor;
+			this.saca(valor);
 			cuenta.depositar(valor);
 			return true;
 		}return false;

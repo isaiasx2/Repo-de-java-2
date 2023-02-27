@@ -1,7 +1,7 @@
 
 public class PruebaEncapsulamiento {
 	public static void main(String[] args) {
-		Cuenta cuenta = new Cuenta(55);
+		Cuenta cuenta = new Cuenta(55,6321354);
 		Cliente cliente = new Cliente();
 		cliente.setNombre("Pedro");
 		cliente.setDocumento("22222222"); 
