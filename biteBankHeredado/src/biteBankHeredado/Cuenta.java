@@ -43,18 +43,20 @@ public abstract class Cuenta {
 		}return false;
 	}
 	
-	public boolean saca(double valor) {
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		}else {
-			return false;
+	public void saca(double valor) throws SaldoInsuficienteException{
+		if(this.saldo < valor) {
+			throw new SaldoInsuficienteException("No teienes saldo");
 		}
-	}
+			this.saldo -= valor;
+}
 	
-	public boolean transferir(double valor, Cuenta cuenta){
+	public boolean transferir(double valor, Cuenta cuenta) throws SaldoInsuficienteException{
 		if(this.saldo >= valor ) {
-			this.saca(valor);
+			try {
+			this.saca(valor);}
+			catch(SaldoInsuficienteException exception) {
+				exception.getStackTrace();
+			}
 			cuenta.depositar(valor);
 			return true;
 		}return false;

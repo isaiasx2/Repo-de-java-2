@@ -10,8 +10,8 @@ package biteBankHeredado;
 	}
 	
 	@Override
-	public boolean saca(double valor) {
+	public void saca(double valor) throws SaldoInsuficienteException{
 		double valorRetirar = valor + 0.2;
-		return super.saca(valorRetirar);
+		super.saca(valorRetirar);
 	}
 }

@@ -1,7 +1,7 @@
 package biteBankHeredado;
 
 public class TestCuenta {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException {
 		CuentaCorriente cc = new CuentaCorriente(1, 1);
 		CuentaAhorro ca = new CuentaAhorro(2, 3);
 		
